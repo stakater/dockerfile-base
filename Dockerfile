@@ -6,10 +6,11 @@
 FROM 			phusion/baseimage:0.9.19
 MAINTAINER 		Rasheed Amir <rasheed@aurorasolutions.io>
 
+# Set TERM environment variable
+ENV       TERM xterm
 # Make sure the package repository is up to date
 RUN 			echo "deb http://archive.ubuntu.com/ubuntu xenial main universe" > /etc/apt/sources.list
 RUN 			apt-get -y update
-
 
 # Install python-software-properties (so you can do add-apt-repository)
 RUN 			DEBIAN_FRONTEND=noninteractive apt-get install -y python-software-properties
